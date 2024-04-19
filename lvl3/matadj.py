@@ -1,9 +1,9 @@
-import networkx as nx
+import numpy as np
 
 class Graph:
     def __init__(self, numNodes):
         self.N = numNodes
-        self.G = nx.Graph()
+        self.G = np.full((numNodes, numNodes), False)
         self.nodeInfo = {}
         self.edgeInfo = {}
 
@@ -70,18 +70,19 @@ print("DFS starting from node 4:")
 g.dfs(4)
 
 print("BFS starting from node 4:")
-g.bfs(4)        visited = set()
+g.bfs(4)        
+visited = set()
 
-        queue.append(S)
-        visited.add(S)
+queue.append(S)
+visited.add(S)
 
-        while queue:
-            x = queue.pop(0)
-            print(x)
-            for y in self.G.neighbors(x):
-                if y not in visited:
-                    visited.add(y)
-                    queue.append(y)
+while queue:
+    x = queue.pop(0)
+    print(x)
+    for y in self.G.neighbors(x):
+        if y not in visited:
+            visited.add(y)
+            queue.append(y)
 
     def biparti(self, S):
         queue = []
