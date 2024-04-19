@@ -8,8 +8,6 @@ output_file = sys.argv[2]
 output = open(output_file, "w")
 
 for line in lines:
-    y_max, y_cur, y_min = 0, 0, 0
-    x_max, x_cur, x_min = 0, 0, 0
 
     for c in line:
         if c == "A" and x_cur == x_min:
