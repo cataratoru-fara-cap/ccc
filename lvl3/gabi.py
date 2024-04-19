@@ -16,7 +16,7 @@ while (input):
     for i in range(lh):
         lawn.append(input.readline().strip())
     lawns.append(lawn)
-    path = input.readline()
+    path = input.readline().strip()
 
     size = input.readline()
     lh = int(size.split()[1])
