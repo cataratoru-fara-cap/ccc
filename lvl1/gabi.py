@@ -1,4 +1,6 @@
-my_file = "level1_example.in"
+import sys
+
+my_file = sys.argv[1]
 input = open(my_file, "r")
 lines = input.readlines()[1:]
 
