@@ -70,34 +70,32 @@ print("DFS starting from node 4:")
 g.dfs(4)
 
 print("BFS starting from node 4:")
-g.bfs(4)        
+g.bfs(4)        visited = set()
 
-visited = set()
+        queue.append(S)
+        visited.add(S)
 
-queue.append(S)
-visited.add(S)
+        while queue:
+            x = queue.pop(0)
+            print(x)
+            for y in self.G.neighbors(x):
+                if y not in visited:
+                    visited.add(y)
+                    queue.append(y)
 
-while queue:
-    x = queue.pop(0)
-    print(x)
-    for y in self.G.neighbors(x):
-        if y not in visited:
-            visited.add(y)
-            queue.append(y)
+    def biparti(self, S):
+        queue = []
+        visited = set()
 
-def biparti(self, S):
-    queue = []
-    visited = set()
+        queue.append(S)
+        visited.add(S)
 
-    queue.append(S)
-    visited.add(S)
-
-    while queue:
-        x = queue.pop(0)
-        for y in self.G.neighbors(x):
-            if y not in visited:
-                visited.add(y)
-                queue.append(y)
+        while queue:
+            x = queue.pop(0)
+            for y in self.G.neighbors(x):
+                if y not in visited:
+                    visited.add(y)
+                    queue.append(y)
 
 # Create the graph
 g = Graph(8)
