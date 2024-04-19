@@ -4,7 +4,7 @@ my_file = sys.argv[1]
 input = open(my_file, "r")
 lines = input.readlines()[1:]
 
-output_file = "output_ex.txt"
+output_file = sys.argv[2]
 output = open(output_file, "w")
 
 for line in lines:
