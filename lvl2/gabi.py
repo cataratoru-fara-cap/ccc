@@ -8,13 +8,13 @@ output_file = sys.argv[2]
 output = open(output_file, "w")
 
 for line in lines:
-    y_max, y_cur, y_min = 1, 1, 1
-    x_max, x_cur, x_min = 1, 1, 1
+    y_max, y_cur, y_min = 0, 0, 0
+    x_max, x_cur, x_min = 0, 0, 0
 
     for c in line:
         if c == "A" and x_cur == x_min:
             x_cur -= 1
-            x_min += 1
+            x_min -= 1
 
         elif c == "W" and y_cur == y_max:
             y_cur += 1
@@ -22,7 +22,7 @@ for line in lines:
 
         elif c == "S" and y_cur == y_min:
             y_cur -= 1
-            y_min += 1
+            y_min -= 1
 
         elif c == "D" and x_cur == x_max:
             x_cur += 1
@@ -40,9 +40,9 @@ for line in lines:
         elif c == "D":
             x_cur += 1 
 
-    H = y_max + x_min
-    L = x_max + x_min
+    H = y_max - y_min + 1
+    L = x_max - x_min + 1
 
-    output.write(f"{H} {L}\n")
+    output.write(f"{L} {H}\n")
 
 output.close()
